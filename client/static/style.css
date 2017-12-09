@@ -4,13 +4,17 @@
 }
 html {
   height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #1d9363 0%, #0F3544 100%);
   overflow: hidden;
 }
 
 body {
   margin-top:-6px;
 
+}
+
+a {
+  color:#3ac4ff
 }
 
 .clear {
