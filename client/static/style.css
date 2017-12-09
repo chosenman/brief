@@ -1,0 +1,60 @@
+* {
+  margin:0;
+  padding:0
+}
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+
+body {
+  margin-top:-6px;
+
+}
+
+.clear {
+  clear:both
+}
+
+#frontLogin {
+  color:white;
+  text-align: center;
+
+  position:absolute;
+  top:50%;left:50%;
+  margin-left:-200px;
+  margin-top:-130px;
+
+  width:400px;
+}
+  .white {
+    background: white;
+  }
+
+#frontLogin .g-signin2 {
+  margin-left: -60px;
+  padding-left: 50%;
+}
+
+
+#topPanel {
+  background: #fff;
+
+  padding:10px;
+}
+  #topPanel span, #topPanel img{
+    display:block; float:left;
+  }
+  #topPanel span {
+    padding-left:10px;
+    line-height: 125%;
+  }
+  #topPanel img{
+
+    border-radius:50%; width:40px;
+
+  }
+  #topPanel .exit {
+    float:right; padding-right:20px;
+  }
