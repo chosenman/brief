@@ -1,0 +1,20 @@
+<!-- hidden  -->
+<div style="display:none" class="g-signin2" data-onsuccess="onSignIn"></div>
+<!-- hidden  -->
+<div id="topPanel">
+    <div class="container">
+        <span class="logo">
+          <a href="/">The Brief</a>
+        </span>
+
+
+        <img src="<%= user['picture'] %>" />
+        <span id="userSnippet">
+          <%= user['name'] %><br>
+          <a href="/dashboard">Settings</a>
+        </span>
+
+        <a href="" onclick="signOut();" class="btn btn-primary float-right" >Sign out</a>
+        <div class="clear"></div>
+    </div>
+</div>

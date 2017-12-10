@@ -12,6 +12,8 @@ var mongoose = require('mongoose');
   var auth = new GoogleAuth;
   var client = new auth.OAuth2(CLIENT_ID, '', '');
 
+
+
 module.exports = {
 
   //********************************
@@ -19,7 +21,7 @@ module.exports = {
   //********************************
   front_page: function(req, res){
     // if user not logged in
-	var needUser = false;
+  	var needUser = false;
     if(!req.session.userLoggedIn) {
       needUser = true;
     }
@@ -54,7 +56,8 @@ module.exports = {
                   name: payload['name'],
                   email: payload['email'],
                   picture: payload['picture'],
-                  lang: payload['ru']
+                  lang: payload['ru'],
+                  given_name: payload['given_name']
                 }
                 // do store userId or sub(subject as userId) in database as Primary key
                 console.log("user authorized");
@@ -71,11 +74,18 @@ module.exports = {
       },
 
   dashboard: function(req, res){
-    if(!req.session.userLoggedIn) {
-      console.log(req.session.userLoggedIn);
+
+    var needUser = false;
+    if(req.session.userLoggedIn && req.session.user) {
+      needUser = true;
+      res.render('dashboard', {
+        needUser: needUser,
+        user: req.session.user
+      });
+    } else {
       res.redirect('/');
     }
-    res.render('dashboard', {user:req.session.user});
+
   },
 
   user_profile: function(req, res){

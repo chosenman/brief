@@ -10,7 +10,7 @@ html {
 
 body {
   margin-top:-6px;
-
+  background-color: transparent;
 }
 
 a {
@@ -47,18 +47,27 @@ a {
 
   padding:10px;
 }
-  #topPanel span, #topPanel img{
+  #topPanel span{
     display:block; float:left;
   }
   #topPanel span {
-    padding-left:10px;
     line-height: 125%;
   }
   #topPanel img{
-
+    float:right;
     border-radius:50%; width:40px;
 
   }
   #topPanel .exit {
     float:right; padding-right:20px;
+  }
+  #topPanel span#userSnippet {
+    float:right;
+    padding:0 20px;
+  }
+  #topPanel .logo a, #topPanel .logo a:hover {
+    font-size:2em;
+    text-decoration: none;
+    line-height: 40px;
+    color:black; font-weight: bold;
   }

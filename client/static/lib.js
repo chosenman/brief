@@ -1,3 +1,5 @@
+
+// get location function
 var getLocation = function(href){
   var l = document.createElement("a");
   l.href = href;

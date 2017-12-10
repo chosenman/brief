@@ -2,58 +2,67 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Dashboard</title>
+    <title>Settings</title>
     <meta name="google-signin-scope" content="profile email">
+
    <meta name="google-signin-client_id" content="273487283165-bqorn91iag31tck4dejddojqhskllsvs.apps.googleusercontent.com">
-   <link rel="stylesheet" href="/style.css">
-   <scrypt  type="text/javascript" src="/lib.js"></script>
+
    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+      <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <div class="">
+    <% include incl/topUserMenu.ejs %>
 
-      <a href="/logout" >Exit</a>
+  <div class="container text-white pt-3">
+    <h1>Settings:</h1>
 
+    <div class="row pt-3">
+            <div class="col-6">
+              <h2>Calendar appointments</h2>
+              <p>Turn on: <input type="checkbox"/></p>
+            </div>
+            <div class="col-6">
+              <h2>Contact birthdays</h2>
+              <p>Turn on: <input type="checkbox"/></p>
+            </div>
     </div>
-    dashboard
+    <div class="row pt-3">
+            <div class="col-6">
+              <h2>Weather</h2>
+              <p>Turn on: <input type="checkbox"/></p>
+            </div>
+            <div class="col-6">
+              <h2>News</h2>
+              <p>Turn on: <input type="checkbox"/></p>
+            </div>
+    </div>
+    <div class="row pt-3">
+            <div class="col-6">
+              <h2>Traffic to work</h2>
+              <p>Turn on: <input type="checkbox"/></p>
+            </div>
+            <div class="col-6">
+              <h2>Upcoming holidays</h2>
 
-    <script>
-      function onSignIn(googleUser) {
-        console.log("wooot");
-        // Useful data for your client-side scripts:
-        // var profile = googleUser.getBasicProfile();
-        // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        // console.log('Full Name: ' + profile.getName());
-        // console.log('Given Name: ' + profile.getGivenName());
-        // console.log('Family Name: ' + profile.getFamilyName());
-        // console.log("Image URL: " + profile.getImageUrl());
-        // console.log("Email: " + profile.getEmail());
+            </div>
+    </div>
+    <div class="row pt-3">
+            <div class="col-6">
+              <h2>Google Analytics</h2>
 
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        // console.log("ID Token: " + id_token);
+            </div>
+            <div class="col-6">
+              <h2></h2>
 
-        var xhr = new XMLHttpRequest();
-         xhr.open('POST', 'http://localhost:8020/tokensignin');
-         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-         xhr.onload = function() {
-           if(xhr.responseText == "success"){
-             // Signed response
-             console.log(xhr.responseText);
-             location.reload();
-           }
-         };
-         xhr.send('idtoken=' + id_token);
-      };
+            </div>
+    </div>
 
-    // sign out button
-    function signOut() {
-      var auth2 = gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function () {
-        console.log('User signed out.');
-      });
-    }
+  </div>
 
-  </script>
+    <% include incl/script.ejs %>
+    <scrypt  type="text/javascript" src="/lib.js"></script>
   </body>
 </html>
