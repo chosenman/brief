@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>The Brief</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="google-signin-scope" content="profile email">
    <meta name="google-signin-client_id" content="273487283165-bqorn91iag31tck4dejddojqhskllsvs.apps.googleusercontent.com">
    <!-- <scrypt  type="text/javascript" src="/lib.js"></script> -->
@@ -63,7 +64,8 @@
          // console.log("ID Token: " + id_token);
 
          var xhr = new XMLHttpRequest();
-          xhr.open('POST', 'http://localhost:8020/tokensignin');
+		var url = window.location.href + 'tokensignin';
+          xhr.open('POST', url);
           xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
           xhr.onload = function() {
             if(xhr.responseText == "success"){

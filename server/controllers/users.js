@@ -19,8 +19,9 @@ module.exports = {
   //********************************
   front_page: function(req, res){
     // if user not logged in
+	var needUser = false;
     if(!req.session.userLoggedIn) {
-      var needUser = true;
+      needUser = true;
     }
     res.render('index',{
       needUser: needUser,

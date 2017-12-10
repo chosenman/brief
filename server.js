@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
+app.disable('view cache');
 
 require('./server/config/mongoose.js');
 
